@@ -16,13 +16,13 @@ window.netflixRewindPlugin.seek = function (e) {
   if (window.netflixRewindPlugin.player) {
     let currentTime = window.netflixRewindPlugin.player.getCurrentTime();
     switch (e.key) {
-      case '<':
-      case ',':
+      case 'q':
+      case 'z':
         console.debug(`⏪ Seeking backwards by ${window.netflixRewindPlugin.config.rewindSec} second${window.netflixRewindPlugin.config.rewindSec > 1 ? 's' : ''}`);
         window.netflixRewindPlugin.player.seek(currentTime - window.netflixRewindPlugin.config.rewindSec * 1000)
         break;
-      case '>':
-      case '.':
+      case 'w':
+      case 'x':
         console.debug(`⏩ Seeking forwards by ${window.netflixRewindPlugin.config.seekForwardSec} second${window.netflixRewindPlugin.config.seekForwardSec > 1 ? 's' : ''}`);
         window.netflixRewindPlugin.player.seek(currentTime + window.netflixRewindPlugin.config.seekForwardSec * 1000)
         break;
